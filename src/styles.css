@@ -81,6 +81,11 @@ h3 {
   scroll-margin-top: 80px;
 }
 
+.section::before,
+.section::after {
+  pointer-events: none;
+}
+
 .skip-link {
   position: fixed;
   z-index: 1000;
@@ -135,6 +140,12 @@ h3 {
   background: var(--lime);
   font-size: 1.3rem;
   box-shadow: 0 5px 0 rgba(22, 22, 22, 0.12);
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 320ms ease;
+}
+
+.brand:hover .brand-mark {
+  transform: translateY(-2px) rotate(-5deg);
+  box-shadow: 0 7px 0 rgba(22, 22, 22, 0.14);
 }
 
 .brand-name {
@@ -208,6 +219,10 @@ h3 {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
+.hero-grid {
+  animation: hero-surface-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 .hero-grid::before,
 .hero-grid::after {
   position: absolute;
@@ -234,6 +249,32 @@ h3 {
 .hero-copy {
   position: relative;
   z-index: 3;
+}
+
+.hero-enter > * {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: hero-content-in 720ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-enter > :nth-child(1) {
+  animation-delay: 170ms;
+}
+
+.hero-enter > :nth-child(2) {
+  animation-delay: 250ms;
+}
+
+.hero-enter > :nth-child(3) {
+  animation-delay: 340ms;
+}
+
+.hero-enter > :nth-child(4) {
+  animation-delay: 430ms;
+}
+
+.hero-enter > :nth-child(5) {
+  animation-delay: 520ms;
 }
 
 .eyebrow,
@@ -349,6 +390,7 @@ h3 {
 }
 
 .workflow-card {
+  --profile-rotation: 1.4deg;
   position: relative;
   z-index: 3;
   overflow: hidden;
@@ -357,7 +399,12 @@ h3 {
   background: #fffdf7;
   color: var(--ink);
   box-shadow: 12px 12px 0 rgba(22, 22, 22, 0.2);
-  transform: rotate(1.4deg);
+  transform: rotate(var(--profile-rotation));
+}
+
+.hero-card-enter {
+  opacity: 0;
+  animation: profile-card-in 850ms 360ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .workflow-header,
@@ -417,6 +464,14 @@ h3 {
   grid-template-columns: 28px 23px 1fr;
 }
 
+.hero-card-enter .workflow-list li {
+  --workflow-delay: 0ms;
+  opacity: 0;
+  transform: translateX(16px);
+  animation: workflow-item-in 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(700ms + var(--workflow-delay));
+}
+
 .workflow-list li:last-child {
   min-height: auto;
 }
@@ -452,6 +507,10 @@ h3 {
   width: 2px;
   background: var(--ink);
   content: "";
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: workflow-line-in 420ms ease-out forwards;
+  animation-delay: calc(820ms + var(--workflow-delay));
 }
 
 .workflow-content {
@@ -518,7 +577,7 @@ h3 {
   background: var(--lime);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 1.15rem;
-  transform: rotate(7deg);
+  animation: sticker-code-float 4.8s ease-in-out infinite;
 }
 
 .hero-sticker-spark {
@@ -529,7 +588,7 @@ h3 {
   border-radius: 50%;
   background: var(--pink);
   font-size: 2rem;
-  transform: rotate(-9deg);
+  animation: sticker-spark-float 5.4s 400ms ease-in-out infinite;
 }
 
 .hero-sticker-arrow {
@@ -540,11 +599,31 @@ h3 {
   border-radius: 17px;
   background: var(--yellow);
   font-size: 1.65rem;
-  transform: rotate(-5deg);
+  animation: sticker-arrow-float 4.4s 800ms ease-in-out infinite;
 }
 
 .about-section {
   background: var(--paper);
+}
+
+.about-section::after {
+  position: absolute;
+  z-index: 0;
+  right: 8%;
+  bottom: -80px;
+  width: min(42vw, 560px);
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(200, 188, 255, 0.32);
+  content: "";
+  filter: blur(62px);
+}
+
+.about-section > .container,
+.approach-section > .container,
+.stack-section > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-heading {
@@ -599,7 +678,7 @@ h3 {
   border-radius: 30px;
   background: var(--white);
   box-shadow: 0 7px 0 var(--ink);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 360ms ease;
 }
 
 .principle-card:nth-child(2) {
@@ -646,6 +725,7 @@ h3 {
   border-radius: 44px;
   background: var(--ink);
   color: var(--white);
+  box-shadow: 0 -24px 80px rgba(111, 143, 247, 0.12), 0 28px 90px rgba(22, 22, 22, 0.12);
 }
 
 .stack-section .section-label {
@@ -691,7 +771,7 @@ h3 {
   border-radius: 29px;
   background: var(--sky);
   color: var(--ink);
-  transition: transform 180ms ease;
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 360ms ease;
 }
 
 .stack-card:nth-child(2) {
@@ -715,7 +795,8 @@ h3 {
 }
 
 .stack-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-7px) rotate(-0.25deg);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.24);
 }
 
 .stack-card-head {
@@ -765,10 +846,29 @@ h3 {
   background: rgba(255, 255, 255, 0.76);
   font-size: 0.77rem;
   font-weight: 760;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), background 240ms ease;
+}
+
+.stack-card li:hover {
+  transform: translateY(-2px);
+  background: var(--white);
 }
 
 .approach-section {
   padding: 100px 16px 16px;
+}
+
+.approach-section::before {
+  position: absolute;
+  z-index: 0;
+  top: 10%;
+  left: -8%;
+  width: min(36vw, 480px);
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(111, 143, 247, 0.14);
+  content: "";
+  filter: blur(80px);
 }
 
 .approach-layout {
@@ -822,12 +922,13 @@ h3 {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 5px 0 var(--ink);
   grid-template-columns: 42px 1fr 24px;
-  transition: transform 180ms ease, background 180ms ease;
+  transition: transform 340ms cubic-bezier(0.22, 1, 0.36, 1), background 260ms ease, box-shadow 340ms ease;
 }
 
 .approach-item:hover {
   transform: translateX(-5px);
   background: var(--lime);
+  box-shadow: 6px 7px 0 var(--ink);
 }
 
 .approach-number {
@@ -859,6 +960,11 @@ h3 {
   padding-top: 6px;
   font-size: 1.25rem;
   font-weight: 850;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.approach-item:hover .approach-arrow {
+  transform: translate(3px, 3px) rotate(-8deg);
 }
 
 .closing-section {
@@ -885,6 +991,12 @@ h3 {
   border-radius: 50%;
   background: var(--pink);
   content: "";
+  transform: translate(36px, 36px) scale(0.88);
+  transition: transform 950ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.closing-card.is-visible::after {
+  transform: translate(0, 0) scale(1);
 }
 
 .closing-card .section-label {
@@ -955,20 +1067,92 @@ h3 {
 }
 
 .reveal {
+  --reveal-delay: 0ms;
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 620ms ease, transform 620ms ease;
+  filter: blur(7px);
+  transform: translateY(42px) scale(0.985);
+  transition: opacity 760ms ease, transform 760ms cubic-bezier(0.22, 1, 0.36, 1), filter 680ms ease;
+  transition-delay: var(--reveal-delay);
+  will-change: opacity, transform, filter;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+  will-change: auto;
 }
 
-.principles-grid .reveal:nth-child(2),
-.stack-grid .reveal:nth-child(2n),
-.approach-list .reveal:nth-child(2n) {
-  transition-delay: 70ms;
+@keyframes hero-surface-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-content-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes profile-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px) rotate(4deg) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--profile-rotation)) scale(1);
+  }
+}
+
+@keyframes workflow-item-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes workflow-line-in {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes sticker-code-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(7deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(4deg);
+  }
+}
+
+@keyframes sticker-spark-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-9deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-4deg);
+  }
+}
+
+@keyframes sticker-arrow-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(1deg);
+  }
 }
 
 :focus-visible {
@@ -987,8 +1171,9 @@ h3 {
   }
 
   .workflow-card {
+    --profile-rotation: -0.7deg;
     width: min(100%, 620px);
-    transform: rotate(-0.7deg);
+    transform: rotate(var(--profile-rotation));
   }
 
   .hero-sticker-code {
@@ -1206,13 +1391,16 @@ h3 {
   *::before,
   *::after {
     scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
     transition-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
 
   .reveal {
     opacity: 1;
+    filter: none;
     transform: none;
   }
 }

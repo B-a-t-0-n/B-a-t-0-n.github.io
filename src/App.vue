@@ -115,7 +115,7 @@ onMounted(() => {
         }
       })
     },
-    { threshold: 0.12 },
+    { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
   )
 
   document.querySelectorAll('.reveal').forEach((element) => observer.observe(element))
@@ -172,7 +172,7 @@ function closeMenu() {
         <span class="hero-sticker hero-sticker-arrow" aria-hidden="true">↗</span>
 
         <div class="container hero-grid">
-          <div class="hero-copy">
+          <div class="hero-copy hero-enter">
             <p class="eyebrow"><span></span> VUE 3 · C# · ASP.NET CORE</p>
             <h1>
               Владислав Книгин
@@ -199,7 +199,7 @@ function closeMenu() {
             </div>
           </div>
 
-          <aside class="workflow-card" aria-label="Краткий профиль разработчика">
+          <aside class="workflow-card hero-card-enter" aria-label="Краткий профиль разработчика">
             <div class="workflow-header">
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
               <code>developer.profile</code>
@@ -207,7 +207,11 @@ function closeMenu() {
             </div>
 
             <ol class="workflow-list">
-              <li v-for="(step, index) in workflow" :key="step.title">
+              <li
+                v-for="(step, index) in workflow"
+                :key="step.title"
+                :style="{ '--workflow-delay': `${index * 80}ms` }"
+              >
                 <span class="workflow-number">0{{ index + 1 }}</span>
                 <span class="workflow-line" aria-hidden="true"></span>
                 <span class="workflow-content">
@@ -238,7 +242,12 @@ function closeMenu() {
           </div>
 
           <div class="principles-grid">
-            <article v-for="principle in principles" :key="principle.number" class="principle-card reveal">
+            <article
+              v-for="(principle, index) in principles"
+              :key="principle.number"
+              class="principle-card reveal"
+              :style="{ '--reveal-delay': `${index * 85}ms` }"
+            >
               <span>{{ principle.number }}</span>
               <h3>{{ principle.title }}</h3>
               <p>{{ principle.text }}</p>
@@ -259,7 +268,12 @@ function closeMenu() {
           </div>
 
           <ol class="approach-list">
-            <li v-for="step in approachSteps" :key="step.number" class="approach-item reveal">
+            <li
+              v-for="(step, index) in approachSteps"
+              :key="step.number"
+              class="approach-item reveal"
+              :style="{ '--reveal-delay': `${index * 85}ms` }"
+            >
               <span class="approach-number">{{ step.number }}</span>
               <div>
                 <h3>{{ step.title }}</h3>
@@ -282,7 +296,12 @@ function closeMenu() {
           </div>
 
           <div class="stack-grid">
-            <article v-for="group in stackGroups" :key="group.index" class="stack-card reveal">
+            <article
+              v-for="(group, index) in stackGroups"
+              :key="group.index"
+              class="stack-card reveal"
+              :style="{ '--reveal-delay': `${index * 85}ms` }"
+            >
               <div class="stack-card-head">
                 <span>{{ group.index }}</span>
                 <div>
