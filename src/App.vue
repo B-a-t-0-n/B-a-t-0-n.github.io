@@ -135,7 +135,7 @@ function closeMenu() {
     <header class="site-header">
       <div class="container nav-wrap">
         <a class="brand" href="#top" aria-label="Наверх" @click="closeMenu">
-          <span class="brand-mark">VK</span>
+          <span class="brand-mark" aria-hidden="true">🥖</span>
           <span class="brand-name">Владислав Книгин</span>
         </a>
 
@@ -167,6 +167,9 @@ function closeMenu() {
       <section id="top" class="hero section">
         <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
         <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+        <span class="hero-sticker hero-sticker-code" aria-hidden="true">&lt;/&gt;</span>
+        <span class="hero-sticker hero-sticker-spark" aria-hidden="true">✶</span>
+        <span class="hero-sticker hero-sticker-arrow" aria-hidden="true">↗</span>
 
         <div class="container hero-grid">
           <div class="hero-copy">
@@ -311,7 +314,7 @@ function closeMenu() {
     <footer class="site-footer">
       <div class="container">
         <div>
-          <span class="brand-mark">VK</span>
+          <span class="brand-mark" aria-hidden="true">🥖</span>
           <p>Владислав Книгин · Fullstack Developer</p>
         </div>
         <p>© {{ currentYear }} · Сделано на Vue 3</p>
