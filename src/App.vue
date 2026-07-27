@@ -6,33 +6,33 @@ const currentYear = new Date().getFullYear()
 
 const navLinks = [
   { label: 'Обо мне', href: '#about' },
-  { label: 'Стек', href: '#stack' },
   { label: 'Подход', href: '#approach' },
+  { label: 'Стек', href: '#stack' },
 ]
 
 const workflow = [
-  { title: 'Требования', note: 'Цели и ограничения' },
-  { title: 'Архитектура', note: 'Границы и взаимодействия' },
-  { title: 'Реализация', note: 'Frontend и backend' },
-  { title: 'Тесты', note: 'Качество и предсказуемость' },
-  { title: 'Деплой', note: 'Запуск и наблюдаемость' },
+  { title: 'Роль', note: 'Fullstack-разработчик' },
+  { title: 'Frontend', note: 'Vue 3 · TypeScript · Vite' },
+  { title: 'Backend', note: 'C# · ASP.NET Core · PostgreSQL' },
+  { title: 'Архитектура', note: 'DDD · Clean Architecture' },
+  { title: 'Инфраструктура', note: 'Docker · Kubernetes · Observability' },
 ]
 
 const principles = [
   {
     number: '01',
-    title: 'Продуктовое мышление',
-    text: 'Сначала понимаю задачу, ценность для пользователя и ограничения — потом выбираю технологии.',
+    title: 'Fullstack-разработка',
+    text: 'Разрабатываю интерфейс, API, бизнес-логику и работу с данными как части одного веб-приложения.',
   },
   {
     number: '02',
-    title: 'Архитектура до кода',
-    text: 'Выстраиваю доменные границы, потоки данных и контракты, чтобы систему было легко развивать.',
+    title: 'Архитектурный подход',
+    text: 'Применяю DDD и Clean Architecture. Использую модульный монолит или микросервисы в зависимости от задачи.',
   },
   {
     number: '03',
-    title: 'Полный цикл',
-    text: 'Связываю интерфейс, API, данные, тесты и инфраструктуру в один целостный продукт.',
+    title: 'Доставка и эксплуатация',
+    text: 'Проверяю ключевые сценарии, контейнеризирую сервисы и настраиваю наблюдаемость после деплоя.',
   },
 ]
 
@@ -40,13 +40,13 @@ const stackGroups = [
   {
     index: '01',
     title: 'Frontend',
-    text: 'Быстрые и понятные интерфейсы',
+    text: 'Интерфейсы и клиентская логика',
     items: ['Vue 3', 'TypeScript', 'JavaScript', 'Node.js', 'Tailwind CSS', 'Vite', 'HTML5', 'CSS3'],
   },
   {
     index: '02',
     title: 'Backend',
-    text: 'Надёжные API и бизнес-логика',
+    text: 'API, бизнес-логика и real-time',
     items: ['C#', '.NET', 'ASP.NET Core', 'EF Core', 'Dapper', 'REST API', 'WebSockets'],
   },
   {
@@ -58,19 +58,19 @@ const stackGroups = [
   {
     index: '04',
     title: 'Архитектура',
-    text: 'Ясные границы и управляемая сложность',
+    text: 'Структура приложения и границы модулей',
     items: ['DDD', 'Clean Architecture', 'Микросервисы', 'Модульный монолит'],
   },
   {
     index: '05',
     title: 'DevOps & Observability',
-    text: 'Воспроизводимый запуск и понимание системы',
+    text: 'Контейнеризация, оркестрация и телеметрия',
     items: ['Docker', 'Kubernetes', 'Grafana', 'Loki', 'Alloy', 'OpenTelemetry'],
   },
   {
     index: '06',
     title: 'AI & Agentic Development',
-    text: 'Инструменты для усиления и автоматизации разработки',
+    text: 'Agentic-инструменты в процессе разработки',
     items: ['OpenAI Codex', 'AI Agents', 'Skills', 'MCP', 'Hooks', 'Plugins', 'Agent Harness'],
   },
 ]
@@ -89,7 +89,7 @@ const approachSteps = [
   {
     number: '03',
     title: 'Реализация',
-    text: 'Создаю frontend и backend как единую систему: от UI-состояний до API, хранения и интеграций.',
+    text: 'Реализую frontend и backend: от UI-состояний до API, хранения данных и интеграций.',
   },
   {
     number: '04',
@@ -99,7 +99,7 @@ const approachSteps = [
   {
     number: '05',
     title: 'Деплой и наблюдаемость',
-    text: 'Контейнеризирую сервисы, выстраиваю релиз и телеметрию, чтобы видеть поведение продукта.',
+    text: 'Контейнеризирую сервисы, настраиваю процесс релиза и телеметрию работающей системы.',
   },
 ]
 
@@ -173,37 +173,37 @@ function closeMenu() {
 
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow"><span></span> FULLSTACK · WEB PLATFORMS · ARCHITECTURE</p>
+            <p class="eyebrow"><span></span> VUE 3 · C# · ASP.NET CORE</p>
             <h1>
-              Создаю веб-платформы
-              <span>от требований до работающего продукта.</span>
+              Владислав Книгин
+              <span>Fullstack-разработчик</span>
             </h1>
             <p class="hero-lead">
-              Меня зовут <strong>Владислав Книгин</strong>. Я fullstack-разработчик: связываю Vue-интерфейсы,
-              backend на C# и инфраструктуру в целостные системы.
+              Разрабатываю веб-приложения на <strong>Vue 3</strong> и <strong>C# / ASP.NET Core</strong>. Работаю с
+              frontend, backend, данными, архитектурой и инфраструктурой — от требований до деплоя и наблюдаемости.
             </p>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#stack">
-                Изучить стек
+              <a class="button button-primary" href="#approach">
+                Мой подход
                 <span aria-hidden="true">↓</span>
               </a>
-              <a class="button button-secondary" href="#approach">Как я работаю</a>
+              <a class="button button-secondary" href="#stack">Навыки и стек</a>
             </div>
 
             <div class="hero-signals" aria-label="Ключевые направления">
-              <span>Vue 3</span>
-              <span>ASP.NET Core</span>
-              <span>DDD</span>
-              <span>Kubernetes</span>
+              <span>Frontend + Backend</span>
+              <span>Архитектура</span>
+              <span>Тестирование</span>
+              <span>Деплой</span>
             </div>
           </div>
 
-          <aside class="workflow-card" aria-label="Цикл разработки">
+          <aside class="workflow-card" aria-label="Краткий профиль разработчика">
             <div class="workflow-header">
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-              <code>fullstack.workflow</code>
-              <span class="workflow-status">active</span>
+              <code>developer.profile</code>
+              <span class="workflow-status">fullstack</span>
             </div>
 
             <ol class="workflow-list">
@@ -218,8 +218,8 @@ function closeMenu() {
             </ol>
 
             <div class="workflow-footer">
-              <span><i></i> full_cycle</span>
-              <code>status: ready</code>
+              <span><i></i> web_platforms</span>
+              <code>vue + .net</code>
             </div>
           </aside>
         </div>
@@ -228,11 +228,12 @@ function closeMenu() {
       <section id="about" class="section about-section">
         <div class="container">
           <div class="section-heading reveal">
-            <p class="section-label">01 · Обо мне</p>
-            <h2>Разрабатываю не отдельные экраны, а <span>целостные системы.</span></h2>
+            <p class="section-label">01 · Кто я</p>
+            <h2>Fullstack-разработчик, работающий <span>на всех уровнях веб-приложения.</span></h2>
             <p>
-              Активно участвую в создании платформ полного цикла: от анализа задачи и выбора архитектуры до
-              реализации, тестов, деплоя и наблюдаемости.
+              Меня зовут Владислав Книгин. Моя основная специализация — frontend на Vue 3 и backend на C# / ASP.NET
+              Core. Помимо реализации, занимаюсь архитектурой, интеграциями, тестированием, контейнеризацией и
+              наблюдаемостью.
             </p>
           </div>
 
@@ -246,14 +247,38 @@ function closeMenu() {
         </div>
       </section>
 
+      <section id="approach" class="section approach-section">
+        <div class="container approach-layout">
+          <div class="approach-intro reveal">
+            <p class="section-label">02 · Подход</p>
+            <h2>Подходы, которых я <span>придерживаюсь в разработке.</span></h2>
+            <p>
+              Сначала уточняю требования и проектирую архитектуру, затем реализую frontend и backend, проверяю
+              основные сценарии и подготавливаю систему к деплою.
+            </p>
+          </div>
+
+          <ol class="approach-list">
+            <li v-for="step in approachSteps" :key="step.number" class="approach-item reveal">
+              <span class="approach-number">{{ step.number }}</span>
+              <div>
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.text }}</p>
+              </div>
+              <span class="approach-arrow" aria-hidden="true">↘</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
       <section id="stack" class="section stack-section">
         <div class="container">
           <div class="section-heading section-heading-row reveal">
             <div>
-              <p class="section-label">02 · Технологии</p>
-              <h2>Стек, который закрывает <span>весь путь продукта.</span></h2>
+              <p class="section-label">03 · Навыки и стек</p>
+              <h2>Технологии, с которыми <span>я работаю.</span></h2>
             </div>
-            <p>От браузера до кластера, от доменной модели до телеметрии.</p>
+            <p>Frontend, backend, данные, архитектура, инфраструктура и agentic AI.</p>
           </div>
 
           <div class="stack-grid">
@@ -273,35 +298,15 @@ function closeMenu() {
         </div>
       </section>
 
-      <section id="approach" class="section approach-section">
-        <div class="container approach-layout">
-          <div class="approach-intro reveal">
-            <p class="section-label">03 · Подход</p>
-            <h2>От неопределённости к <span>управляемой системе.</span></h2>
-            <p>
-              Каждый этап уменьшает риски для следующего: требования направляют архитектуру, архитектура упрощает реализацию, а тесты делают релиз предсказуемым.
-            </p>
-          </div>
-
-          <ol class="approach-list">
-            <li v-for="step in approachSteps" :key="step.number" class="approach-item reveal">
-              <span class="approach-number">{{ step.number }}</span>
-              <div>
-                <h3>{{ step.title }}</h3>
-                <p>{{ step.text }}</p>
-              </div>
-              <span class="approach-arrow" aria-hidden="true">↘</span>
-            </li>
-          </ol>
-        </div>
-      </section>
-
       <section class="section closing-section">
         <div class="container">
           <div class="closing-card reveal">
-            <p class="section-label">FULL CYCLE DEVELOPMENT</p>
-            <h2>Сильный продукт — это не набор технологий, а <span>связная система.</span></h2>
-            <p>Выбираю инструменты под задачу и довожу решение до работы в реальной среде.</p>
+            <p class="section-label">КРАТКО</p>
+            <h2>Владислав Книгин · <span>Fullstack-разработчик</span></h2>
+            <p>
+              Vue 3 на frontend, C# и ASP.NET Core на backend, DDD и Clean Architecture, PostgreSQL, Redis,
+              RabbitMQ, Docker, Kubernetes и observability.
+            </p>
             <a class="button button-light" href="https://github.com/B-a-t-0-n" target="_blank" rel="noreferrer">
               GitHub-профиль
               <span aria-hidden="true">↗</span>
